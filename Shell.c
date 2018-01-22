@@ -5,7 +5,9 @@
 int main(){
 	char current;
 	char command[1024];
-	while(1){
+	FILE *hp;
+	hp = fopen("history.txt","a+");
+	while(1){ 
 		printf("veryniceshell>");
 		int size = 0;
 		for(int i = 0;i<1024;i++){
@@ -19,17 +21,19 @@ int main(){
 				size++;
 			}
 		}
+		
+		fprintf(hp, "%s\n",command);
 		if(strncmp(command,"exit",4)==0){
 			break;
 		}
 		if(strncmp(command,"history",7)==0){
 			
+
 		}
 
-		
-		
-		
 	}
+	fclose(hp);
+}
 
 	
-}
+
