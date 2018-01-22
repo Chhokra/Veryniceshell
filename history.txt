@@ -1,5 +1,7 @@
-this
-is
-a
-bullshit
+history
+history
+echo -n yaaaaa this one
+echo yaaa this one
+history
 exit
+history
