@@ -3,10 +3,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 int main(){
-	int check = 1;
 	char current;
 	char command[1024];
-	while(check){
+	while(1){
+		printf("veryniceshell>");
 		int size = 0;
 		for(int i = 0;i<1024;i++){
 			current = getchar();
@@ -19,9 +19,14 @@ int main(){
 				size++;
 			}
 		}
-		if(strncmp(command,"cd",2) || strncmp(command,"echo",4) || strncmp(command,"history",7) || strncmp(command,"pwd",3) || strncmp(command,"exit",4)){
-			system(command);
+		if(strncmp(command,"exit",4)==0){
+			break;
 		}
+		if(strncmp(command,"history",7)==0){
+			
+		}
+
+		
 		
 		
 	}
