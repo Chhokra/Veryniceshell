@@ -1,7 +1,5 @@
-history
-history
-echo -n yaaaaa this one
-echo yaaa this one
-history
+pwd
 exit
-history
+exit
+hello
+exit

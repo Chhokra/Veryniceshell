@@ -10,6 +10,7 @@ int main(){
 	char currentdir[1024];
 	char *dir;
 	dir = getcwd(currentdir,1024);
+	char previousdir[1024];
 	while(1){ 
 		printf("veryniceshell>");
 		int size = 0;
@@ -51,9 +52,7 @@ int main(){
 		}
 
 		if(strncmp(command,"echo",4)==0){
-				if(strncmp(command,"echo -e",7)==0){
-					
-				}
+				
 				int var = 1;
 				if(strncmp(command,"echo -n",7)==0){
 					var = 2;
@@ -81,6 +80,49 @@ int main(){
 			if(dir!=NULL){
 				printf("%s\n", currentdir);
 			}
+		}
+
+		if(strncmp(command,"cd",2)==0){
+				if(strncmp(command,"cd -",4)==0){
+						int check1;
+						if(previousdir!=NULL){
+							check1 = chdir(previousdir);
+						}
+						strcpy(previousdir,currentdir);
+						dir = getcwd(currentdir,1024);
+				}
+				else if(strncmp(command,"cd ~",4)==0){
+					char *home = getenv("HOME");
+					int check2 = chdir(home);
+					if(check2!=0){
+						dir = getcwd(currentdir,1024);
+					}
+					strcpy(previousdir,currentdir);
+					dir = getcwd(currentdir,1024);
+
+				}
+				else{
+				char *travel;
+				travel = strtok(command," ");
+				int count = 1;
+				int check;
+				strcpy(previousdir,currentdir);
+				while(travel!=NULL){
+					if(count==2){
+						check = chdir(travel);
+						break;
+					}
+					travel = strtok(NULL," ");
+					count++;
+				}
+				if(check!=0){
+					printf("Invalid directory\n");
+				}
+
+				dir = getcwd(currentdir,1024);
+				}
+				
+
 		}
 
 		
