@@ -12,3 +12,4 @@ pwd
 cd OSAssignment1
 pwd
 exit
+ls

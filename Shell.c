@@ -2,6 +2,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 int main(){
 	char current;
 	char command[1024];
@@ -122,6 +124,25 @@ int main(){
 				dir = getcwd(currentdir,1024);
 				}
 				
+
+		}
+
+		if(strncmp(command,"ls",2)==0){
+			if(fork()==0){
+				char *henlo = strtok(command," \n");
+				char *henlo2[1024];
+				int counter = 0;
+				while(henlo!=NULL){
+					henlo2[counter] = henlo;
+					henlo = strtok(NULL," \n");
+					counter++;
+				}
+				henlo2[counter] = NULL;
+				execv("xls",henlo2);
+			}
+			else{
+				wait(NULL);
+			}
 
 		}
 
