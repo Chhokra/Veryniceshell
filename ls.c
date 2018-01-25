@@ -7,8 +7,14 @@
 int main(int argc,char *argv[]){
 	DIR *lol;
 	struct dirent  *travel;
-	if(argc==2){
-		lol = opendir(argv[1]);
+	if(argc==2 || argc == 1 ){
+		if(argc==2){
+			lol = opendir(argv[1]);
+
+		}
+		else if(argc==1){
+			lol = opendir(".");
+		}
 		if(lol!=NULL){
 			travel = readdir(lol);
 			while(travel!=NULL){

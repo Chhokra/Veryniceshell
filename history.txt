@@ -3,3 +3,12 @@ exit
 exit
 hello
 exit
+cd ..
+pwd
+cd ~
+pwd
+cd -
+pwd
+cd OSAssignment1
+pwd
+exit
