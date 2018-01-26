@@ -78,13 +78,13 @@ int main(){
 			
 
 		}
-		if(strncmp(command,"pwd",3)==0){
+		if(strncmp(command,"pwd",3)==0){ // no options handled
 			if(dir!=NULL){
 				printf("%s\n", currentdir);
 			}
 		}
 
-		if(strncmp(command,"cd",2)==0){
+		if(strncmp(command,"cd",2)==0){ // options handled - -,~
 				if(strncmp(command,"cd -",4)==0){
 						int check1;
 						if(previousdir!=NULL){
@@ -127,7 +127,7 @@ int main(){
 
 		}
 
-		if(strncmp(command,"ls",2)==0){
+		if(strncmp(command,"ls",2)==0){ // options handled - a,i
 			if(fork()==0){
 				char *henlo = strtok(command," \n");
 				char *henlo2[1024];
@@ -145,7 +145,7 @@ int main(){
 			}
 
 		}
-		if(strncmp(command,"cat",3)==0){
+		if(strncmp(command,"cat",3)==0){ // options handled - *,
 			if(fork()==0){
 				char *henlo = strtok(command," \n");
 				char *henlo2[1024];

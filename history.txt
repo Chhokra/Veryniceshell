@@ -13,3 +13,93 @@ echo hello
 echo yaaaaaaas
 echo -n yaaaaas
 history
+pwd
+cd ..
+pwd
+cd -
+pwd
+history
+ls
+ls
+ls
+ls
+mkdir A/B/C
+mkdir -p A/B/C
+exit
+ls
+ls
+ls
+ls
+exit
+ls
+cat Shell.c
+pwd
+pwd
+pwd
+cat *
+history
+echo hello
+echo -n hello
+pwd
+cd ~
+pwd
+cd -
+pwd
+ls /usr
+ls
+date
+rm a
+rm a
+rm a
+mkdir -p A/B/C
+exit
+echo hello
+echo -n hello
+pwd
+cd ~
+pwd
+cd -
+pwd
+ls /usr
+ls
+exit
+ls
+exit
+ls
+ls
+ls
+ls -a
+exit
+pwd
+cd ..
+pwd
+cd -
+pwd
+date
+mkdir A/B/C
+mkdir -p A/B/c
+ls
+cd A
+ls
+ls -a
+cd ..
+clear
+exit
+ls
+ls
+ls
+ls -i
+ls -a
+ls -i
+ls -i /usr
+ls -a /usr
+pwd
+ls
+ls -a
+ls -i
+exit
+ls -i
+history
+exit
+ls
+exit
