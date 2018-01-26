@@ -32,7 +32,7 @@ int main(){
 		if(strncmp(command,"exit",4)==0){
 			break;
 		}
-		if(strncmp(command,"history",7)==0){
+		if(strncmp(command,"history",7)==0){ // options handled -c 
 			if(strncmp(command,"history -c",10)==0){
 				hp = freopen("history.txt","w",hp);
 				hp = freopen("history.txt","a+",hp);
@@ -53,7 +53,7 @@ int main(){
 
 		}
 
-		if(strncmp(command,"echo",4)==0){
+		if(strncmp(command,"echo",4)==0){ // options handled -n
 				
 				int var = 1;
 				if(strncmp(command,"echo -n",7)==0){

@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
 int main(int argc,char *argv[]){
 	DIR *lol;
 	struct dirent  *travel;
@@ -30,7 +31,13 @@ int main(int argc,char *argv[]){
 
 	}
 	else if(argc==2){
-		if(strcmp(argv[1],"-i")==0){
+		struct stat lol1;
+		stat(argv[1],&lol1);
+		if(S_ISREG(lol1.st_mode)){
+			printf("Cannot ls file %s\n",argv[1] );
+		}
+		else{
+			if(strcmp(argv[1],"-i")==0){
 			lol = opendir(".");
 			if(lol!=NULL){
 				travel = readdir(lol);
@@ -82,12 +89,23 @@ int main(int argc,char *argv[]){
 			}
 			
 		}
+		else{
+			printf("Invalid directory\n");
+		}
 	
 
 		}
+
+		}
+		
 	}
 	else if(argc==3){
-		
+		struct stat lol1;
+		stat(argv[2],&lol1);
+		if(S_ISREG(lol1.st_mode)){
+			printf("Cannot ls file %s\n",argv[2] );
+		}
+		else{
 		lol = opendir(argv[2]);
 		if(lol!=NULL){
 			travel = readdir(lol);
@@ -109,6 +127,13 @@ int main(int argc,char *argv[]){
 			}
 			printf("\n");
 		}
+		else{
+			printf("Invalid Directory\n");
+		}
+
 	}
+
+		}
+		
 
 }

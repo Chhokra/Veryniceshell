@@ -1,61 +1,15 @@
-pwd
+history
 exit
-exit
-hello
-exit
-cd ..
-pwd
-cd ~
-pwd
-cd -
-pwd
-cd OSAssignment1
-pwd
-exit
-ls
 cat *
-cat rm.c
-cat cat.c
-cd ..
-ls
-cat solution.py
-quit
+cat *
+cat a
+cat Shell.c
 exit
-ls
-rm bullshit
-ls
-rm a
-rm t
-rm -d t
-exit
-mkdir a
-mkdir b
-ls
-rm -d b
-ls
-exit
-ls
-mkdir a
-ls
-cd a
-mkdir b
-ls
-rm -d b
-ls
-cd ..
-rm a
-rm -d a
-cd ..
-pwd
-mkdir OSAssignment1
-mkdir henlo
-ls
-cd henlo
-ls
-pw
-pwd
-cd ..
-ls
-cd OSAssignment1
-ls
-exit
+history
+history
+echo hello 
+echo -n hello
+echo hello 
+echo yaaaaaaas
+echo -n yaaaaas
+history
