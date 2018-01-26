@@ -202,6 +202,24 @@ int main(){
 
 		}
 
+		if(strncmp(command,"mkdir",5)==0){
+			if(fork()==0){
+				char *henlo = strtok(command," \n");
+				char *henlo2[1024];
+				int counter = 0;
+				while(henlo!=NULL){
+					henlo2[counter] = henlo;
+					henlo = strtok(NULL," \n");
+					counter++;
+				}
+				henlo2[counter] = NULL;
+				execv("/home/chhokra/Desktop/OSAssignment1/xmkdir",henlo2);
+			}
+			else{
+				wait(NULL);
+			}
+		}
+
 		
 
 		

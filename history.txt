@@ -28,3 +28,34 @@ rm a
 rm t
 rm -d t
 exit
+mkdir a
+mkdir b
+ls
+rm -d b
+ls
+exit
+ls
+mkdir a
+ls
+cd a
+mkdir b
+ls
+rm -d b
+ls
+cd ..
+rm a
+rm -d a
+cd ..
+pwd
+mkdir OSAssignment1
+mkdir henlo
+ls
+cd henlo
+ls
+pw
+pwd
+cd ..
+ls
+cd OSAssignment1
+ls
+exit
