@@ -138,13 +138,71 @@ int main(){
 					counter++;
 				}
 				henlo2[counter] = NULL;
-				execv("xls",henlo2);
+				execv("/home/chhokra/Desktop/OSAssignment1/xls",henlo2);
 			}
 			else{
 				wait(NULL);
 			}
 
 		}
+		if(strncmp(command,"cat",3)==0){
+			if(fork()==0){
+				char *henlo = strtok(command," \n");
+				char *henlo2[1024];
+				int counter = 0;
+				while(henlo!=NULL){
+					henlo2[counter] = henlo;
+					henlo = strtok(NULL," \n");
+					counter++;
+				}
+				henlo2[counter] = NULL;
+				execv("/home/chhokra/Desktop/OSAssignment1/xcat",henlo2);
+			}
+			else{
+				wait(NULL);
+			}
+
+		}
+
+		if(strncmp(command,"date",4)==0){
+			if(fork()==0){
+				char *henlo = strtok(command," \n");
+				char *henlo2[1024];
+				int counter = 0;
+				while(henlo!=NULL){
+					henlo2[counter] = henlo;
+					henlo = strtok(NULL," \n");
+					counter++;
+				}
+				henlo2[counter] = NULL;
+				execv("/home/chhokra/Desktop/OSAssignment1/xdate",henlo2);
+			}
+			else{
+				wait(NULL);
+			}
+
+		}
+
+		if(strncmp(command,"rm",2)==0){
+			if(fork()==0){
+				char *henlo = strtok(command," \n");
+				char *henlo2[1024];
+				int counter = 0;
+				while(henlo!=NULL){
+					henlo2[counter] = henlo;
+					henlo = strtok(NULL," \n");
+					counter++;
+				}
+				henlo2[counter] = NULL;
+				execv("/home/chhokra/Desktop/OSAssignment1/xrm",henlo2);
+			}
+			else{
+				wait(NULL);
+			}
+
+		}
+
+		
 
 		
 

@@ -5,11 +5,13 @@
 #include <stdlib.h>
 #include <string.h>
 int main(int argc,char *argv[]){
+
 	if (argc==2){
 		DIR *lol;
 		struct dirent *travel;
 		lol = opendir(".");
-		FILE *cp;
+		if(strcmp(argv[1],"*")){
+			FILE *cp;
 		cp = fopen(argv[1],"r");
 		if(lol!=NULL){
 			travel = readdir(lol);
@@ -29,10 +31,11 @@ int main(int argc,char *argv[]){
 			}
 		}
 
-		
-		
-	}
-	if(argc==9){
+
+		}
+
+		else{
+			printf("hello\n");
 			DIR *lol;
 			struct dirent *travel;
 			lol = opendir(".");
@@ -51,12 +54,19 @@ int main(int argc,char *argv[]){
 					travel = readdir(lol);
 				}
 			}
+
+		}
+		
+
+
+		
+		
 	}
 
+
 	if(argc==3){
-		printf("hello1\n");
+
 		if(strcmp(argv[1],"-n")==0){
-			printf("hello2\n");
 			DIR *lol;
 			struct dirent *travel;
 			lol = opendir(".");

@@ -13,3 +13,18 @@ cd OSAssignment1
 pwd
 exit
 ls
+cat *
+cat rm.c
+cat cat.c
+cd ..
+ls
+cat solution.py
+quit
+exit
+ls
+rm bullshit
+ls
+rm a
+rm t
+rm -d t
+exit

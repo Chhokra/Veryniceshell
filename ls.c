@@ -7,32 +7,84 @@
 int main(int argc,char *argv[]){
 	DIR *lol;
 	struct dirent  *travel;
-	if(argc==2 || argc == 1 ){
+	if(argc == 1 ){
 		lol = opendir(".");
 		if(lol!=NULL){
 			travel = readdir(lol);
 			while(travel!=NULL){
-				if(strcmp(argv[1],"-a")==0){
-					if((*travel).d_name[0]!='.'){
-						printf("%s\n",(*travel).d_name );
-					}
-					}
-					else if(strcmp(argv[1],"-i")==0){
-						if((*travel).d_name[0]!='.'){
-						printf("%lu   %s\n",(*travel).d_ino,(*travel).d_name );
-					}
-					}
-					else {
+				
+			
+			
+					
+					
 						if((*travel).d_name[0]!='.'){
 						printf("%s\n",(*travel).d_name );
-					}
+					
 
 					}
 					travel = readdir(lol);
 			}
 			
 		}
+	
 
+	}
+	else if(argc==2){
+		if(strcmp(argv[1],"-i")==0){
+			lol = opendir(".");
+			if(lol!=NULL){
+				travel = readdir(lol);
+				while(travel!=NULL){
+					if((*travel).d_name[0]!='.'){
+						printf("%lu    %s\n",(*travel).d_ino,(*travel).d_name );
+					}
+					travel = readdir(lol);
+				}
+			}
+		}
+		if(strcmp(argv[1],"-a")==0){
+			lol = opendir(".");
+		if(lol!=NULL){
+			travel = readdir(lol);
+			while(travel!=NULL){
+				
+			
+			
+					
+					
+						printf("%s\n",(*travel).d_name );
+					
+
+					
+					travel = readdir(lol);
+			}
+			
+		}
+	
+
+		}
+		else{
+			lol = opendir(argv[1]);
+		if(lol!=NULL){
+			travel = readdir(lol);
+			while(travel!=NULL){
+				
+			
+			
+					
+					
+						if((*travel).d_name[0]!='.'){
+						printf("%s\n",(*travel).d_name );
+					
+
+					}
+					travel = readdir(lol);
+			}
+			
+		}
+	
+
+		}
 	}
 	else if(argc==3){
 		
